@@ -1,20 +1,22 @@
 using System.Security.Cryptography;
 using System.Text;
 
+namespace CrypterMode.Source;
+
 class Encrypt
 {
-    static string Connect(string txtSimple, string[] txtArray, string secret)
+    public static string Connect(string txtSimple, string[] txtArray, string secret)
     {
         byte[] salt = RandomNumberGenerator.GetBytes(16);
-        byte[] key = DeriveKey(secret, salt);
+        byte[] key = Decrypt.DeriveKey(secret, salt);
         byte[] nonce = RandomNumberGenerator.GetBytes(12);
         string txt = null;
 
-        if (txtArray == "null")
+        if (txtArray == null)
         {
             txt = txtSimple;
         } 
-        else if (txtSimple == "null")
+        else if (txtSimple == null)
         {
             txt = string.Join(Environment.NewLine, txtArray);
         } 

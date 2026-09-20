@@ -1,6 +1,11 @@
+using System.Security.Cryptography;
+using System.Text;
+
+namespace CrypterMode.Source;
+
 class Decrypt
 {
-    static string Connect(string cipherText, string secret)
+    public static string Connect(string cipherText, string secret)
     {
         byte[] data = Convert.FromBase64String(cipherText);
 
@@ -63,6 +68,7 @@ class Decrypt
     }
 
     public static byte[] DeriveKey(string secret, byte[] salt){
+#pragma warning disable SYSLIB0060 // Type or member is obsolete
         using (Rfc2898DeriveBytes kdf = new Rfc2898DeriveBytes
         (
             secret,
@@ -72,5 +78,6 @@ class Decrypt
         )) {
             return kdf.GetBytes(32);
         }
+#pragma warning restore SYSLIB0060 // Type or member is obsolete
     }
 }
