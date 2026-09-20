@@ -1,5 +1,5 @@
 @echo off
-
+chcp 65001 >nul
 :START
 cls
 
@@ -45,6 +45,9 @@ if errorlevel 2 (
 
 set /p "key=Put your password: "
 echo(!key!>key.txt
+
+set /p "namefolder=Set the data folder name: "
+echo(!namefolder!>projectFolder.txt
 
 cd ..
 dotnet run

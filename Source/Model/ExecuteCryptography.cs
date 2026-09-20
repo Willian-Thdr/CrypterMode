@@ -12,17 +12,23 @@ string localFileWay = Path.Combine(localbase, "files", "wayFile.txt");
 string localFileText = Path.Combine(localbase, "files", "textFile.txt");
 string secret = Path.Combine(localbase, "files", "key.txt");
 
-string encrypt = Path.Combine(localbase, "crypted", "Encrypt.txt");
-string decrypt = Path.Combine(localbase, "crypted", "Decrypt.txt");
+string foldername = Path.Combine(localbase, "files", "projectFolder.txt");
+string mainCryptFolder = Path.Combine(localbase, "crypted", File.ReadAllText(foldername).Trim());
+Directory.CreateDirectory(mainCryptFolder);
+string encrypt = Path.Combine(mainCryptFolder, "Encrypt.txt");
+string decrypt = Path.Combine(mainCryptFolder, "Decrypt.txt");
 
 string fileWay = File.ReadAllText(localFileWay).Trim();
 string fileText = File.ReadAllText(localFileText).Trim();
+
+Console.WriteLine(fileWay);
+Console.WriteLine(fileText);
 
 if (File.ReadAllText(textmode).Trim().Contains("RunModeOne"))
 {
     if (fileWay.Contains("nullArId277068"))
     {
-        string text = Encrypt.Connect(File.ReadAllText(fileText), null, File.ReadAllText(secret).Trim());
+        string text = Encrypt.Connect(fileText, null, File.ReadAllText(secret).Trim());
         using (StreamWriter writer = new StreamWriter(encrypt))
         {
             writer.Write(text);
