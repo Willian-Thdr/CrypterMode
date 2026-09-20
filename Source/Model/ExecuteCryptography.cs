@@ -2,11 +2,6 @@ using CrypterMode.Source;
 
 string localbase = AppContext.BaseDirectory;
 
-for (int i = 0; i < 4; i++)
-{
-    localbase = Directory.GetParent(localbase)!.FullName;
-}
-
 string textmode = Path.Combine(localbase, "files", "mode.txt");
 string localFileWay = Path.Combine(localbase, "files", "wayFile.txt");
 string localFileText = Path.Combine(localbase, "files", "textFile.txt");
