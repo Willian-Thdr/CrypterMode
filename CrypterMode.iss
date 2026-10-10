@@ -3,7 +3,7 @@
 ; Non-commercial use only
 
 #define MyAppName "Crypter Mode"
-#define MyAppVersion "1.1"
+#define MyAppVersion "1.2"
 #define MyAppPublisher "Willian-Thdr"
 #define MyAppURL "https://github.com/Willian-Thdr/CrypterMode"
 #define MyAppExeName "CrypterMode.exe"

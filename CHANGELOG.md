@@ -1,6 +1,6 @@
-# Crypte rMode v1.1
+# Crypte rMode v1.2
 
 ## Changes
 
-- Compiling the program into an `.exe` file;
-- Fixed an bug in the `.bat` file
+- Fixed an bug in the `.bat` file;
+- Fixed bug in the main `.cs` file.

@@ -3,6 +3,7 @@ chcp 65001 >nul
 :START
 cls
 
+cd /d C:\Program Files\Crypter Mode
 setlocal EnableDelayedExpansion
 mkdir files
 mkdir crypted
@@ -50,7 +51,7 @@ set /p "namefolder=Set the data folder name: "
 echo(!namefolder!>projectFolder.txt
 
 cd ..
-start ./CrypterMode.exe
+start CrypterMode.exe
 
 choice /c YN /n /m "Do you wanna execute again? [Y] yes or [N] no: "
 
