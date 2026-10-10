@@ -50,7 +50,7 @@ set /p "namefolder=Set the data folder name: "
 echo(!namefolder!>projectFolder.txt
 
 cd ..
-dotnet run
+start ./CrypterMode.exe
 
 choice /c YN /n /m "Do you wanna execute again? [Y] yes or [N] no: "
 

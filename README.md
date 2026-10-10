@@ -1,4 +1,4 @@
-# Encrypt Mode v1.0
+# Encrypt Mode v1.1
 
 ## About this program
 
